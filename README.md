@@ -47,3 +47,52 @@ Specifications for the editable are below as user stories:
 Please work from this directory, and share your implementation. Ideally, you can create a Git repository and invite us as a collaborator. Instructions should be added to this README file that allow us to take your code, run the application, and evaluate your work. Code should be annotated where sensible.
 
 As a whole, this exercise aims to touch on a variety of skills and concepts involved in a lot of development at Type/Code. Throughout the process, please feel free to reach out for help - while we're reluctant to give hints for implemenation, we're glad to clarify specifications. Please dedicate no more than 12 hours to the exercise - while 100% completion is great, it's not expected - focus on the areas where you know you can excel and identify areas where you might need some help.
+
+# Developer Notes
+## Todo list
+
+- [x] create a checklist
+- [x] setup project dependencies
+- [x] implement the epitome backend 
+- [X] create the rest api endpoints for the article's
+    - [x] create the rest api endpoint list
+    - [x] create the rest api endpoint get
+    - [x] create the rest api endpoint post
+    - [x] create the rest api endpoint patch
+    - [x] create the rest api endpoint delete (just because I can not needed)
+- [ ] recreate the layout using react components
+    - [ ] create a super basic list of the articles for indexing (just because it makes sense)
+    - [ ] create a body component that renders a body component containing predefined html
+- [ ] write unit tests for code where its reasonable and have time
+- [ ] document installation
+- [ ] code cleanup when done and time remaining
+
+~~~~
+I ran out of time before I could write tests, this will be something that I will be implementing as part of the epitome framework that I wrote. This example app will serve as a first test when I do implement that. I would have used mocha and Controllers/Article.controller.test.js would return a function that gets the app container and controller instance.
+~~~~
+
+## Desisions and reasons for them
+### Structure
+rest-server: The rest-server folder is clearly named as a rest based server root directory in order to clarify the intent that in here is all the files for that project. Code can be split up to be contained is seperate git repositories in order to minimize the impact a small change has on a development team.
+
+font-end: Contains all the code used by the front end application. This would be moved to a seperete github project and included as a sub project here. The front end can run its own server to do server side rendering.
+
+common: Would be moved to a seperate github project and installed on both the front end and back end applications in order to share the common code of the project.
+
+~~~~
+#NOTE: for production you would run an HTTPS/HTTP2 server that would then use html streaming or http push to send the header with react and other vendor cdn links to the front end when request starts. The react application would then use server side rendering and send the response expectint react js files to be there already.
+~~~~
+
+### Libraries
+epitome: A framework I am working on for running a backend on. The goal is to simplify and eliminate menial tasks that developers usually have to handle in the same way Laravel and CakePhp does in the php comunity. I used it so that you can be aware that I wrote it and this way you can see more of my code than what I can produce in 12 hours.
+
+uni-validation: Another lib that I wrote (granted there are better options out there, like uni-validator), and decided to use so that you can go see my code quality there as well.
+
+Rxjs: Great for all asyncronous coding. A dependency of uni-validation.
+
+## INSTALLATION
+
+### Requirements
+- NodeJs v8.9.4
+- MongoDB v3.4.2
+- NPM 5.6.0

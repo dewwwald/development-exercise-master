@@ -1,0 +1,58 @@
+/* USED by grid generator to remember percentages */
+$remember-grid-size: '' !global;
+
+/**
+* Percentage Widths
+* Mainly used as part of the grid
+*/
+@mixin make-widths ($size, $denominator) {
+  /**
+    * #{$denominator} fractions widths
+    */
+  @if ($size != '') {
+    $size: $size + '-';
+  }
+  @for $i from 1 through $denominator {
+    @if (not index($remember-grid-size, $size+'-'+before-des( $i / $denominator * 100)+"-"+after-des( $i / $denominator * 100))) {
+      $remember-grid-size: join($remember-grid-size, ($size+'-'+before-des( $i / $denominator * 100)+"-"+after-des( $i / $denominator * 100)) ) !global;
+      %#{$size}w--#{before-des( $i / $denominator * 100)}-#{after-des( $i / $denominator * 100)} { width: floor($i / $denominator * 1000%) / 10;}
+    }
+    .#{$size}w--#{$i}\/#{$denominator} { @extend %#{$size}w--#{before-des( $i / $denominator * 100)}-#{after-des( $i / $denominator * 100)};}
+  }
+}
+
+@mixin width-generator () {
+  /* There are applications for this kind of behaviour */
+  %w--auto { width: auto;}
+  .w--auto { @extend %w--auto;}
+
+  %w--fill {
+    width: auto;
+    flex-grow: 1;
+  }
+  .w--fill { @extend %w--fill;}
+
+  @if($responsive and $desktop-first)
+  {
+    @include make-widths('', 8);
+  } @else if ($responsive) {
+    @include make-widths('', 8);
+  }
+
+  @if ($responsive)
+  {
+    @include media('palm') {
+    }
+
+    @include media('lap') {
+    }
+
+    @include media('desk') {
+      @include make-widths('desk', 8);
+    }
+  }
+}
+
+@if $use-grid {
+  @include width-generator();
+}

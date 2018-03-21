@@ -1,0 +1,13 @@
+%list-reset {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul {
+  @extend %soft--left--large, %flush--left;
+}
+
+
+ol {
+  @extend %soft--left--large, %flush--left;
+}

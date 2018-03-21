@@ -1,0 +1,56 @@
+$margin: (
+  '_base': ('margin': $push-pad),
+  'sides': ('margin-left': $push-pad, 'margin-right': $push-pad),
+  'top': ('margin-top': $push-pad),
+  'bottom': ('margin-bottom': $push-pad),
+  'left': ('margin-left': $push-pad),
+  'right': ('margin-right': $push-pad),
+  'ends': ('margin-top': $push-pad, 'margin-bottom': $push-pad),
+  'small': ('margin': $push-pad-small),
+  'sides--small': ('margin-left': $push-pad-small, 'margin-right': $push-pad-small),
+  'top--small': ('margin-top': $push-pad-small),
+  'bottom--small': ('margin-bottom': $push-pad-small),
+  'left--small': ('margin-left': $push-pad-small),
+  'right--small': ('margin-right': $push-pad-small),
+  'ends--small': ('margin-top': $push-pad-small, 'margin-bottom': $push-pad-small),
+  'smaller': ('margin': $push-pad-smaller),
+  'sides--smaller': ('margin-left': $push-pad-smaller, 'margin-right': $push-pad-smaller),
+  'top--smaller': ('margin-top': $push-pad-smaller),
+  'bottom--smaller': ('margin-bottom': $push-pad-smaller),
+  'left--smaller': ('margin-left': $push-pad-smaller),
+  'right--smaller': ('margin-right': $push-pad-smaller),
+  'ends--smaller': ('margin-top': $push-pad-smaller, 'margin-bottom': $push-pad-smaller),
+  'smallest': ('margin': $push-pad-smallest),
+  'sides--smallest': ('margin-left': $push-pad-smallest, 'margin-right': $push-pad-smallest),
+  'top--smallest': ('margin-top': $push-pad-smallest),
+  'bottom--smallest': ('margin-bottom': $push-pad-smallest),
+  'left--smallest': ('margin-left': $push-pad-smallest),
+  'right--smallest': ('margin-right': $push-pad-smallest),
+  'ends--smallest': ('margin-top': $push-pad-smallest, 'margin-bottom': $push-pad-smallest),
+  'large': ('margin': $push-pad-large),
+  'sides--large': ('margin-left': $push-pad-large, 'margin-right': $push-pad-large),
+  'top--large': ('margin-top': $push-pad-large),
+  'bottom--large': ('margin-bottom': $push-pad-large),
+  'ends--large': ('margin-top': $push-pad-large, 'margin-bottom': $push-pad-large),
+  'center': ('margin-left': auto, 'margin-right': auto)
+);
+
+@include placeholder-generator('push', $margin, true, ['_base', 'desk']);
+
+$marginFlush: (
+  '_base': ('margin': 0),
+  'sides': ('margin-left': 0, 'margin-right': 0),
+  'top': ('margin-top': 0),
+  'bottom': ('margin-bottom': 0),
+  'left': ('margin-left': 0),
+  'right': ('margin-right': 0),
+);
+
+@include placeholder-generator('flush', $marginFlush, false);
+
+.flush--bottom { @extend %flush--bottom;}
+
+.push--bottom { @extend %push--bottom;}
+
+.push--right--desk { @extend %push--right--desk;}
+

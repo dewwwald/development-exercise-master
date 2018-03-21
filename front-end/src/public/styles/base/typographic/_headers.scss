@@ -1,0 +1,9 @@
+@include headings() {
+  @extend %push--bottom;
+  font-family: $font-header-stack;
+  font-weight: 800;
+  letter-spacing: .01em;
+  line-height: 1.2;
+  color: $clr-secondary;
+  @include px-and-rem(padding-bottom, .3);
+}

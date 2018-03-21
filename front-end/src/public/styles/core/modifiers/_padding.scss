@@ -1,0 +1,50 @@
+$padding: (
+   '_base': ('padding': $push-pad),
+   'sides': ('padding-left': $push-pad, 'padding-right': $push-pad),
+   'top': ('padding-top': $push-pad),
+   'bottom': ('padding-bottom': $push-pad),
+   'left': ('padding-left': $push-pad),
+   'right': ('padding-right': $push-pad),
+   'ends': ('padding-top': $push-pad, 'padding-bottom': $push-pad),
+   'small': ('padding': $push-pad-small),
+   'sides--small': ('padding-left': $push-pad-small, 'padding-right': $push-pad-small),
+   'top--small': ('padding-top': $push-pad-small),
+   'bottom--small': ('padding-bottom': $push-pad-small),
+   'left--small': ('padding-left': $push-pad-small),
+   'right--small': ('padding-right': $push-pad-small),
+   'ends--small': ('padding-top': $push-pad-small, 'padding-bottom': $push-pad-small),
+   'smaller': ('padding': $push-pad-smaller),
+   'sides--smaller': ('padding-left': $push-pad-smaller, 'padding-right': $push-pad-smaller),
+   'top--smaller': ('padding-top': $push-pad-smaller),
+   'bottom--smaller': ('padding-bottom': $push-pad-smaller),
+   'left--smaller': ('padding-left': $push-pad-smaller),
+   'right--smaller': ('padding-right': $push-pad-smaller),
+   'ends--smaller': ('padding-top': $push-pad-smaller, 'padding-bottom': $push-pad-smaller),
+   'smallest': ('padding': $push-pad-smallest),
+   'sides--smallest': ('padding-left': $push-pad-smallest, 'padding-right': $push-pad-smallest),
+   'top--smallest': ('padding-top': $push-pad-smallest),
+   'bottom--smallest': ('padding-bottom': $push-pad-smallest),
+   'left--smallest': ('padding-left': $push-pad-smallest),
+   'right--smallest': ('padding-right': $push-pad-smallest),
+   'ends--smallest': ('padding-top': $push-pad-smallest, 'padding-bottom': $push-pad-smallest),
+   'large': ('padding': $push-pad-large),
+   'sides--large': ('padding-left': $push-pad-large, 'padding-right': $push-pad-large),
+   'left--large': ('padding-left': $push-pad-large),
+   'right--large': ('padding-right': $push-pad-large),
+   'top--large': ('padding-top': $push-pad-large),
+   'bottom--large': ('padding-bottom': $push-pad-large),
+   'ends--large': ('padding-top': $push-pad-large, 'padding-bottom': $push-pad-large)
+);
+
+$padding-removers: (
+   '_base': ('padding': 0),
+   'sides': ('padding-left': 0, 'padding-right': 0),
+   'top': ('padding-top': 0),
+   'bottom': ('padding-bottom': 0),
+   'left': ('padding-left': 0),
+   'right': ('padding-right': 0),
+   'ends': ('padding-top': 0, 'padding-bottom': 0)
+);
+
+@include placeholder-generator('soft', $padding, true);
+@include placeholder-generator('hard', $padding-removers, true);

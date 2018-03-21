@@ -1,0 +1,32 @@
+/**
+ * 100% is the browser fs, 16 is standard
+ * $fs-base is determined by the design
+ * #TIP users can set browser font size an you should therefore use rem
+ */
+html {
+   font-family: $font-base-stack;
+   font-size: $fs-base / 16px * 1em;
+   line-height: $base-line-height;
+   letter-spacing: $base-letter-spacing;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+  font-size: 100%;
+  color: $clr-base-ui;
+}
+
+* {
+   @include border-box(true);
+}
+
+.app-container,
+#main {
+  height: 100%;
+  max-width: 100%;
+}
+
+.app-content {
+  min-height: calc(100vh - 375px);
+}

@@ -1,0 +1,89 @@
+/*--------------------*\
+ * FEATURES
+\*--------------------*/
+$use-grid: true;
+$responsive: true;
+$global-border-box: false;
+$use-ratio-objects: true;
+$use-symbols: true;
+$use-custom-checkbox: false;
+$use-checkbox-slider: false;
+$use-custom-radio: true;
+$use-custom-textarea-resize: false;
+$use-buttons: true;
+$desktop-first: false;
+
+/*--------------------*\
+ * Font Setup
+\*--------------------*/
+/* $font names */
+$font-path: '../fonts/';
+$font-base: 'Palatino';
+$font-secondary: 'FuturaStd';
+$font-header: 'Copernicus-Heavy';
+
+/* $font stacks used in css */
+$font-base-stack: $font-base, serif;
+$font-secondary-stack: $font-secondary, sans-serif;
+$font-header-stack: $font-header, 'Georgia', serif;
+
+/* $font config used by core */
+/*------------------------------------------------*\
+#TIP - How to get more font configs
+- duplicate the sass map
+- then simply change the values
+\*------------------------------------------------*/
+$font-setup: (
+  (
+    name: $font-header,
+    path: $font-path + 'copernicus_webfont/',
+    filename: 'Copernicus-Heavy',
+    weight: normal,
+    style: normal
+  ),
+  // (
+  //   name: $font-base,
+  //   path: $font-path + 'Palatino/',
+  //   filename: 'Palatino',
+  //   weight: normal,
+  //   style: normal
+  // ),
+  (
+    name: $font-secondary,
+    path: $font-path + 'FuturaStd-Book/',
+    filename: 'FuturaStd-Book',
+    weight: normal,
+    style: normal
+  ),
+);
+
+$fs-base: 20px;
+$line-height: 28px;
+// alternatively set
+// $base-line-height: 1.15;
+$letter-spacing: 20px;
+// alternatively set
+// $base-letter-spacing: .028em;
+$border-width: 1px / 18px;
+
+$fs-largest: 50px;
+$fs-larger: 42px;
+$fs-large: 32px;
+$fs-h1: 75px;
+$fs-h2: 40px;
+$fs-h3: 30px;
+$fs-h4: 14px;
+$fs-h5: 9px;
+$fs-h6: 8px;
+$fs-small: 7px;
+$fs-smaller: 6px;
+$fs-smallest: 5px;
+
+/*--------------------*\
+ * SPACIN
+\*--------------------*/
+$legacy-grid: true;
+$grid-gut: 6.5;
+$base-spacing: $line-height / $fs-base;
+$push-pad-smaller: $base-spacing - .75;
+$push-pad-smallest: $base-spacing - 1.25;

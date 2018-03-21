@@ -1,0 +1,14 @@
+$spacers: (
+   '_base': ('padding-top': 5, 'padding-bottom': 5),
+   'bottom': ('padding-bottom': 5),
+   'top': ('padding-top': 5),
+   'bottom--inc-large-push': ('padding-bottom': 5 - $push-pad-large),
+   'small': ('padding-top': 3, 'padding-bottom': 3),
+   'small--top': ('padding-top': 3 - $push-pad-small),
+   'small--bottom--inc-small-push': ('padding-bottom': 3 - $push-pad-small),
+   'bottom--inc-small-push': ('padding-bottom': 5 - $push-pad-small),
+   'large': ('padding-top': 7, 'padding-bottom': 7)
+);
+
+@include placeholder-generator('plain', $spacers, true);
+@include class-generator('plain', map-keys($spacers));

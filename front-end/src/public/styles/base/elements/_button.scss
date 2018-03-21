@@ -1,0 +1,157 @@
+%btn {
+  @extend %push--bottom, %fs--h4, %btn--base !optional;
+  @include px-and-rem(padding, .55 1 .5);
+  @include px-and-rem(border-width, 2px);
+  border-style: solid;
+  width: auto;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @include disabled () {}
+}
+a%btn {
+  &:focus,
+  &:active {
+    transition: all 175ms ease-in-out;
+  }
+}
+
+%btn--fat {
+  @extend %fs--h4-priority;
+  @include px-and-rem(padding, 1 1.5);
+}
+
+%btn--full { width: 100%;}
+
+%btn--primary {
+  @extend %btn;
+  background-color: transparent;
+  color: $clr-primary;
+
+  &:hover, &:focus {
+    color: $clr-ntrl-max;
+    border-color: $clr-primary-lt;
+    background-color: $clr-primary-lt;
+  }
+
+  &:active {
+    color: $clr-ntrl-max;
+    border-color: $clr-primary-dk;
+    background-color: $clr-primary-dk;
+  }
+
+  @include disabled () {
+    color: $clr-base;
+    background-color: $clr-base-ltst;
+  }
+}
+.btn--primary { @extend %btn--primary;}
+.btn--primary--full { @extend %btn--primary, %btn--full;}
+
+%btn--ntrl-max {
+  @extend %btn;
+  background-color: transparent;
+  color: $clr-ntrl-max;
+
+  &:hover, &:focus {
+    color: $clr-ntrl-max;
+    border-color: $clr-secondary;
+    background-color: $clr-secondary;
+  }
+
+  &:active {
+    color: $clr-ntrl-max;
+    border-color: $clr-secondary-dk;
+    background-color: $clr-secondary-dk;
+  }
+
+  @include disabled () {
+    color: $clr-base;
+    border-color: $clr-base;
+  }
+}
+.btn--ntrl-max { @extend %btn--ntrl-max;}
+.btn--ntrl-max--fat { @extend %btn--ntrl-max, %btn--fat;}
+.btn--full { @extend %btn--full;}
+
+%btn--warn {
+  @extend %btn;
+  background-color: $clr-warn;
+  color: $clr-ntrl-min;
+  fill: $clr-ntrl-min;
+
+  &:hover, &:focus {
+    color: $clr-ntrl-min;
+    border-color: $clr-warn-lt;
+    background-color: $clr-warn-lt;
+  }
+
+  &:active {
+    color: $clr-ntrl-min;
+    border-color: $clr-warn-dk;
+    background-color: $clr-warn-dk;
+  }
+
+  @include disabled () {
+    color: $clr-ntrl-min;
+    fill: $clr-ntrl-min;
+    background-color: $clr-base;
+  }
+}
+.btn--warn { @extend %btn--warn;}
+.btn--warn--full { @extend %btn--warn, %btn--full;}
+
+
+%btn--error {
+  @extend %btn;
+  background-color: $clr-error;
+  color: $clr-ntrl-min;
+  fill: $clr-ntrl-min;
+
+  &:hover, &:focus {
+    color: $clr-ntrl-min;
+    border-color: $clr-error-lt;
+    background-color: $clr-error-lt;
+  }
+
+  &:active {
+    color: $clr-ntrl-min;
+    border-color: $clr-error-dk;
+    background-color: $clr-error-dk;
+  }
+
+  @include disabled () {
+    color: $clr-ntrl-min;
+    fill: $clr-ntrl-min;
+    background-color: $clr-base;
+  }
+}
+.btn--error { @extend %btn--error;}
+.btn--error--full { @extend %btn--error, %btn--full;}
+
+%btn--success {
+  @extend %btn;
+  background-color: $clr-success;
+  color: $clr-ntrl-min;
+  fill: $clr-ntrl-min;
+
+  &:hover, &:focus {
+    color: $clr-ntrl-min;
+    border-color: $clr-success-lt;
+    background-color: $clr-success-lt;
+  }
+
+  &:active {
+    color: $clr-ntrl-min;
+    border-color: $clr-success-dk;
+    background-color: $clr-success-dk;
+  }
+
+  @include disabled () {
+    color: $clr-ntrl-min;
+    fill: $clr-ntrl-min;
+    background-color: $clr-base;
+  }
+}
+.btn--success { @extend %btn--success;}
+.btn--success--full { @extend %btn--success, %btn--full;}

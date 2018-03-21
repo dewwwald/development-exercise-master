@@ -1,0 +1,94 @@
+@import 'grid/wraps';
+@import 'grid/items';
+@import 'grid/widths';
+@import 'grid/push';
+
+@if $use-grid {
+/**
+ * See the structures/_!load.scss to understand this abstraction.
+ */
+
+/*------------------------------------------------*\
+#First Grid
+To use the grid you need to use have a grid wrap.
+If you want a grid that works without it go and use
+bootstrap. I believe a grids should (atleast for now) either be
+inline-block or flexbox.
+
+HTML:
+<div class="g">
+   <div class="g__i w--1/2">
+      project_name
+   </div>
+   <div class="g__i w--1/2">
+      client_name
+   </div>
+</div>
+\*------------------------------------------------*/
+.g { @extend %grid;}
+.g--justify { @extend %grid--justify;}
+.g--no-guts { @extend %grid--no-guts;}
+.g--middle { @extend %grid--middle; }
+.g--top { @extend %grid--top; }
+.g--rev { @extend %grid--reverse; }
+.g--small {
+  @extend %grid;
+  @include px-and-rem(margin-left, -$grid-gut + .75);
+
+  & > .g__i {
+    @include px-and-rem(padding-left, $grid-gut - .75);
+  }
+}
+   .g__i { @extend %grid__item;}
+
+.g--nowrap--lap {
+  @include media(lap) {
+    flex-wrap: nowrap;
+  }
+}
+
+.desk-w--auto {
+  @include media(desk) {
+    width: auto;
+  }
+}
+.desk-w--fill {
+  @include media(desk) {
+    width: auto;
+    flex-grow: 1;
+  }
+}
+
+.lap-w--fill {
+  @include media(lap) {
+    width: auto;
+    flex-grow: 1;
+  }
+}
+
+.lap-g--bottom--cancel {
+  @include media('lap') {
+    vertical-align: bottom;
+    @supports (display: flex) {
+      align-items: initial;
+    }
+  }
+}
+
+.g--bottom {
+  @extend %grid--bottom;
+}
+
+.lap-w--auto {
+  @include media(lap) {
+    width: auto;
+  }
+}
+/**
+ * See core/structures/grid for more clarification
+ */
+
+// .g--middle { @extend %grid--middle;}
+// .g--reverse { @extend %grid--reverse;}
+
+/* endif */}

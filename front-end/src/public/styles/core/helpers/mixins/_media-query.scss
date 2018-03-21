@@ -1,0 +1,19 @@
+@mixin media ($size) {
+  @if ($size == 'xpalm') {
+    $size: $xpalm-start;
+  } @elseif ($size == 'palm') {
+    $size: $palm-start;
+  } @elseif ($size == 'palm-plus') {
+    $size: $palm-plus-start;
+  } @else if ($size == 'lap') {
+    $size: $lap-start;
+  } @else if ($size == 'desk') {
+    $size: $desk-start;
+  } @else if ($size == 'desk-wide') {
+    $size: $desk-wide-start;
+  }
+
+  @media screen and (#{$media-direction}-width:$size) {
+    @content;
+  }
+}

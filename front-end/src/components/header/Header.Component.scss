@@ -1,0 +1,82 @@
+@import '../../public/styles/framework';
+
+
+.enclosure--header {
+  transition: all 175ms ease-in-out;
+  text-align: right;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 48px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 48px;
+
+  .page-is-scrolled &,
+  .header--dark & {
+    background-color: rgba($clr-base-ltr, .45);
+  }
+}
+
+.menu-toggle {
+  @extend %btn--base;
+  background-color: transparent;
+  transition: all 175ms ease-in-out;
+  vertical-align: middle;
+  width: 200px;
+  padding: 10px 0px;
+  z-index: 25;
+
+  &.menu-is-toggled {
+    opacity: .5;
+    z-index: 25;
+  }
+
+  & > svg {
+    vertical-align: middle;
+    pointer-events: all;
+  }
+}
+
+.menu-toggle--x {
+  width: 30px;
+  fill: white;
+}
+
+%menu-container {
+  @extend %soft;
+  position: fixed;
+  left: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 490px;
+  max-width: 100%;
+  transform: translateX(100%);
+  transition: all 175ms ease-in-out;
+  background-color: $clr-base-dk;
+  opacity: 0;
+  z-index: 30;
+
+  &.menu-is-toggled {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.menu-container--primary { @extend %menu-container; }
+
+%menu {
+  list-style: none;
+}
+
+%menu__item {
+  & > a {
+    color: white;
+    text-decoration: none;
+    line-height: 2.5;
+  }
+}
+.menu__item--primary { @extend %menu__item; }
+
+.menu--primary { @extend %menu; }

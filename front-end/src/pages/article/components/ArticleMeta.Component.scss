@@ -1,0 +1,14 @@
+@import '../../../public/styles/framework';
+
+.article-meta {
+  font-family: $font-secondary-stack;
+  font-size: $fs-h4;
+  color: $clr-ntrl-80;
+  text-transform: uppercase;
+}
+.article-meta__author {
+  color: $clr-primary;
+  font-family: $font-header-stack;
+  font-size: $fs-base;
+  text-transform: none;
+}

@@ -1,0 +1,8 @@
+hr {
+  @extend %flush--top;
+  border-width: 0px;
+  border-style: solid;
+  border-color: $clr-ntrl-80;
+  @include px-and-rem(border-bottom-width, $border-width);
+  height: auto;
+}

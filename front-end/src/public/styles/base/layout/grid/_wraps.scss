@@ -1,0 +1,124 @@
+/**
+ * The grid wrapper
+ * Legacy grid does not work for modern browsers
+ * - Chrome breaks
+ * - FF breaks
+ */
+%grid {
+  @include border-box();
+  margin-bottom: 0;
+  @include px-and-rem(margin-left, -$grid-gut);
+
+  @if ($legacy-grid) {
+    display: block;
+    width: 100%;
+    width: calc( 100% + #{ ($grid-gut) * 1rem } );
+
+    font-size: 0px;
+    & > %grid__item { font-size: 1rem}
+  }
+
+  @supports (display: flex) {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+%grid--middle {
+   @if ($legacy-grid) {
+      & > %grid__item {
+         vertical-align: middle;
+      }
+   }
+
+   @extend %grid;
+   @supports (display: flex) {
+     align-items: center;
+   }
+}
+
+%grid--center {
+  @if ($legacy-grid) {
+    & > %grid__item {
+       text-align: center;
+    }
+  }
+
+  @extend %grid;
+  @supports (display: flex) {
+    justify-content: center;
+  }
+}
+
+%grid--bottom {
+  @if ($legacy-grid) {
+    & > %grid__item {
+      vertical-align: bottom;
+    }
+  }
+
+  @extend %grid;
+  @supports (display: flex) {
+    align-items: flex-end;
+  }
+}
+
+%grid--top {
+  @if ($legacy-grid) {
+    & > %grid__item {
+      vertical-align: bottom;
+    }
+  }
+
+  @extend %grid;
+  & > %grid__item {
+    @supports (display: flex) {
+      align-self: flex-start;
+    }
+  }
+}
+
+%grid--reverse {
+  @if ($legacy-grid) {
+    direction: rtl;
+    text-align: left;
+  }
+
+  @extend %grid;
+  @supports (display: flex) {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    direction: ltr;
+  }
+}
+
+%grid--no-guts {
+   @extend %grid;
+   margin-left: 0;
+
+   & > %grid__item {
+      padding-left: 0;
+   }
+}
+
+
+
+%grid--justify {
+  @extend %grid;
+  display: table;
+  @supports (display: flex) {
+    justify-content: space-between;
+    display: flex;
+  }
+
+  & > %grid__item {
+    text-align: center;
+    display: table-cell;
+
+    @supports (display: flex) {
+      display: block;
+    }
+  }
+}

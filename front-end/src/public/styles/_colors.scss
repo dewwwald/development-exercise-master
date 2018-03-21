@@ -1,0 +1,56 @@
+$clr-base-ui: #333333;
+
+$clr-base: #333;
+$clr-base-lt: #808080;
+$clr-base-ltr: #b2b2b2;
+$clr-base-ltst: #f9f9f9;
+$clr-base-dk: #4d4d4d;
+$clr-off-white: #F8F7F4;
+
+$clr-primary: #6f4f2f;
+$clr-primary-lt: lighten($clr-primary, 5%);
+$clr-primary-ltr: lighten($clr-primary, 10%);
+$clr-primary-ltst: lighten($clr-primary, 15%);
+$clr-primary-dk: darken($clr-primary, 9%); // 9f9b85
+
+$clr-secondary: #8998a7;
+$clr-secondary-lt: lighten($clr-secondary, 5%); // CEB58F
+$clr-secondary-ltr: lighten($clr-secondary, 10%); // E1D2BB
+$clr-secondary-ltst: lighten($clr-secondary, 15%);
+$clr-secondary-dk: darken($clr-secondary, 10%);
+
+// $clr-tertiary: #FFDD15;
+// $clr-tertiary-lt: lighten($clr-tertiary, 5%);
+// $clr-tertiary-ltr: lighten($clr-tertiary, 10%);
+// $clr-tertiary-ltst: lighten($clr-tertiary, 15%);
+// $clr-tertiary-dk: darken($clr-tertiary, 5%);
+
+$clr-warn: #f4e31e;
+$clr-warn-lt: lighten($clr-warn, 5%);
+$clr-warn-ltr: lighten($clr-warn, 10%);
+$clr-warn-ltst: lighten($clr-warn, 15%);
+$clr-warn-dk: darken($clr-warn, 5%);
+
+$clr-success: #a1d251;
+$clr-success-lt: lighten($clr-success, 5%);
+$clr-success-ltr: lighten($clr-success, 10%);
+$clr-success-ltst: lighten($clr-success, 15%);
+$clr-success-dk: darken($clr-success, 5%);
+
+$clr-error: #e76c36;
+$clr-error-lt: lighten($clr-error, 5%);
+$clr-error-ltr: lighten($clr-error, 10%);
+$clr-error-ltst: lighten($clr-error, 15%);
+$clr-error-dk: darken($clr-error, 5%);
+
+$clr-ntrl-max: #FFF;
+$clr-ntrl-90: darken($clr-ntrl-max, 10%);
+$clr-ntrl-80: darken($clr-ntrl-max, 20%);
+$clr-ntrl-70: darken($clr-ntrl-max, 30%);
+$clr-ntrl-60: darken($clr-ntrl-max, 40%);
+$clr-ntrl-50: darken($clr-ntrl-max, 50%);
+$clr-ntrl-40: darken($clr-ntrl-max, 60%);
+$clr-ntrl-30: darken($clr-ntrl-max, 70%);
+$clr-ntrl-20: darken($clr-ntrl-max, 80%);
+$clr-ntrl-10: darken($clr-ntrl-max, 90%);
+$clr-ntrl-min: #000;

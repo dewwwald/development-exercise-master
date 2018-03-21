@@ -1,0 +1,15 @@
+/**
+ * The grid item
+ */
+%grid__item {
+   display: inline-block;
+
+   @if $legacy-grid {
+      vertical-align: top;
+      margin-bottom: 0;
+   }
+
+   width: 100%;
+   @include px-and-rem(padding-left, $grid-gut);
+   @include border-box();
+}

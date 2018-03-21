@@ -1,0 +1,14 @@
+@mixin ratio ($width, $height, $auto-extend: true) {
+   @if ($use-ratio-objects) {
+      @if $auto-extend {
+         @extend %ratio;
+      } @else {
+         @include ratio-object();
+      }
+      &:before {
+         padding-bottom: $height/$width * 100%;
+      }
+   } @else {
+      @warn "You must enable ratio objects in the config file";
+   }
+}

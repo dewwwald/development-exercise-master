@@ -1,0 +1,52 @@
+a {
+   transition: all $transition-time $transition-easing;
+   cursor: pointer;
+}
+
+  %read-more-link {
+    @extend %fs--h4;
+    position: relative;
+    display: inline-block;
+    color: $clr-secondary;
+    line-height: normal;
+    vertical-align: middle;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:after,
+    &:before {
+      content: "";
+      border-top: 2px solid $clr-ntrl-max;
+      position: absolute;
+      transition: all $transition-time $transition-easing;
+      @include px-and-rem(padding-left, .05);
+      @include px-and-rem(padding-right, .05);
+      @include px-and-rem(top, -.125  .25);
+      left: 0;
+      right: 0;
+    }
+    &:after {
+      top: auto;
+      @include px-and-rem(bottom, -.125);
+      opacity: 0;
+    }
+    &:before {
+      border-top-color: inherit;
+    }
+
+    &:hover,
+    &:focus {
+      color: $clr-secondary;
+      &:before,
+      &:after { opacity: 1; border-top-color: $clr-secondary;}
+    }
+    &:active {
+      color: $clr-secondary-lt;
+      &:before,
+      &:after { border-top-color: $clr-secondary-lt;}
+    }
+  }
+
+%link-styled {
+  @extend %read-more-link;
+}

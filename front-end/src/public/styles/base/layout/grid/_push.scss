@@ -1,0 +1,49 @@
+/* USED by grid generator to remember percentages */
+$remember-grid-size: '' !global;
+
+/**
+* Percentage Widths
+* Mainly used as part of the grid
+*/
+@mixin make-push ($size, $denominator) {
+  /**
+    * #{$denominator} fractions widths
+    */
+  @if ($size != '') {
+    $size: $size + '-';
+  }
+  @for $i from 1 through $denominator {
+    @if (not index($remember-grid-size, $size+'-'+before-des( $i / $denominator * 100)+"-"+after-des( $i / $denominator * 100))) {
+      $remember-grid-size: join($remember-grid-size, ($size+'-'+before-des( $i / $denominator * 100)+"-"+after-des( $i / $denominator * 100)) ) !global;
+      %#{$size}push--#{before-des( $i / $denominator * 100)}-#{after-des( $i / $denominator * 100)} { margin-left: floor($i / $denominator * 1000%) / 10;}
+    }
+    .#{$size}push--#{$i}\/#{$denominator} { @extend %#{$size}push--#{before-des( $i / $denominator * 100)}-#{after-des( $i / $denominator * 100)};}
+  }
+}
+
+@mixin push-generator () {
+
+  @if($responsive and $desktop-first)
+  {
+    @include make-push('', 8);
+  } @else if ($responsive) {
+    @include make-push('', 8);
+  }
+
+  @if ($responsive)
+  {
+    @include media('palm') {
+    }
+
+    @include media('lap') {
+    }
+
+    @include media('desk') {
+      @include make-push('desk', 8);
+    }
+  }
+}
+
+@if $use-grid {
+  @include push-generator();
+}

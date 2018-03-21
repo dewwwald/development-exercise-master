@@ -1,0 +1,17 @@
+%enclosure-base {
+   @extend %push--center;
+   @include px-and-rem(padding-left, 70px);
+   @include px-and-rem(padding-right, 70px);
+   width: 100%;
+}
+
+$enclosures: (
+   '_base': ('max-width': 1300px),
+);
+
+@include placeholder-generator('enclosure', $enclosures) {
+   @extend %enclosure-base;
+}
+
+@include class-generator('enclosure', map-keys($enclosures));
+

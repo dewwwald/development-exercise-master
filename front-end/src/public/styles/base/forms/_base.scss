@@ -1,0 +1,127 @@
+%soft--input {
+  @include px-and-rem(padding, .5 .75);
+}
+
+form {
+  display: block;
+}
+
+%form-label {
+  @extend %push--bottom--smallest, %fs--h4;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  letter-spacing: .035em;
+  color: $clr-secondary;
+}
+
+label {
+  @extend %form-label;
+}
+
+%form-input {
+  @extend %push--bottom--smaller, %soft--input, %fs--h4--desk;
+  -webkit-appearance: none;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  border: 2px solid $clr-secondary;
+  color: $clr-secondary;
+  outline: none;
+  border-radius: 0;
+  height: auto;
+
+  &:disabled {
+    color: $clr-secondary-lt;
+    background-color: $clr-off-white;
+  }
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select:focus,
+textarea {
+  @extend %fs--h4--desk;
+  font-size: 16px;
+}
+
+input, textarea, select {
+  @extend %form-input;
+}
+
+textarea {
+  resize:  vertical;
+  @include px-and-rem(height, 3.8);
+}
+
+input[type="password"] {
+  letter-spacing: $base-letter-spacing * 8;
+
+}
+
+@include placeholder ('*') {
+  letter-spacing: $base-letter-spacing;
+  color: $clr-secondary-ltst;
+}
+
+@include placeholder ('input[type="password"]') {
+  letter-spacing: $base-letter-spacing;
+}
+
+.form__message--error {
+  @extend %push--bottom--smallest, %fs--h4;
+  &:before {
+    content: "* ";
+  }
+  color: $clr-primary;
+  font-style: italic;
+
+  &:last-child {
+    @extend %push--bottom--smaller;
+  }
+}
+
+.form__message--success {
+  @extend %fs--h4;
+  color: white;
+}
+%form-field {
+  @extend %push--bottom--smaller;
+  position: relative;
+
+  & > input, & > textarea, & > select {
+    @extend %flush--bottom;
+  }
+}
+
+.form__field {
+  @extend %form-field;
+}
+
+.form__field--select {
+  @extend %form-field;
+}
+
+.form__field__icon {
+  position: absolute;
+  top: 50%;
+  left: auto;
+  transform: translateY(-50%);
+  fill: $clr-secondary;
+  width: .9em;
+  height: .9em;
+  @include px-and-rem(right, 1);
+}

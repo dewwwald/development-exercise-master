@@ -2,12 +2,12 @@ module.exports = {
     /**
      * Port the app listens on for localhost / 0.0.0.0
      */
-    port: process.env.APP_PORT || 3000,
+    port: process.env.APP_PORT || 4000,
 
     /**
      * The url on which the app is hosted
      */
-    appUrl: process.env.APP_URL || 'http://localhost:' + (process.env.APP_PORT || 3000),
+    appUrl: process.env.APP_URL || 'http://localhost:' + (process.env.APP_PORT || 4000),
 
     /**
      * App debug more or production mode toggler

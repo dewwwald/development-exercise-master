@@ -7,7 +7,7 @@ module.exports = class WelcomeProvider extends Provider {
       response.append('Access-Control-Allow-Headers', 'content-type, Accept');
       response.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, HEAD, OPTIONS, PUT, DELETE');
       response.append('Allow', 'GET, POST, PATCH, HEAD, OPTIONS, PUT, DELETE');
-      response.append('Access-Control-Allow-Origin', 'http://localhost:4200');
+      response.append('Access-Control-Allow-Origin', 'http://localhost:3000');
       next();
     });
   }

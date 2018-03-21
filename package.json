@@ -5,18 +5,45 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node fullstack.js"
+    "develop": "webpack-dev-server --watch --hot --config=\"front-end/webpack/config.dev.js\"",
+    "build": "webpack --config=\"front-end/webpack/config.prod.js\"",
+    "server": "node fullstack.js",
+    "seeder": "node seed.js",
+    "start": "npm run build && npm run server"
   },
   "author": "Dewald Laubscher <laubscher.dewald@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "epitome-core": "^0.0.0-aplha.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "bundle-loader": "^0.5.6",
+    "css-loader": "^0.28.10",
+    "epitome-core": "^0.0.0-aplha.4",
+    "file-loader": "^1.1.11",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
-    "uni-validation": "0.0.0-alpha.4"
+    "html-webpack-plugin": "^3.0.6",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.8.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "sass-loader": "^6.0.7",
+    "seeder": "^0.2.1",
+    "style-loader": "^0.20.3",
+    "uni-validation": "0.0.0-alpha.4",
+    "url-loader": "^1.0.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-svg-icon-system": "^0.3.4"
   },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "jest": "^22.4.2",
-    "mocha": "^5.0.4"
+    "mocha": "^5.0.4",
+    "webpack": "^4.1.1",
+    "webpack-dev-server": "^3.1.1"
   }
 }

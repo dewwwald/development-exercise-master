@@ -53,29 +53,34 @@ As a whole, this exercise aims to touch on a variety of skills and concepts invo
 
 - [x] create a checklist
 - [x] setup project dependencies
-- [x] implement the epitome backend 
+- [x] implement the epitome backend
 - [X] create the rest api endpoints for the article's
-    - [x] create the rest api endpoint list
-    - [x] create the rest api endpoint get
-    - [x] create the rest api endpoint post
-    - [x] create the rest api endpoint patch
-    - [x] create the rest api endpoint delete (just because I can not needed)
-- [ ] recreate the layout using react components
-    - [ ] create a super basic list of the articles for indexing (just because it makes sense)
-    - [ ] create a body component that renders a body component containing predefined html
-- [ ] write unit tests for code where its reasonable and have time
-- [ ] document installation
-- [ ] code cleanup when done and time remaining
+   - [x] create the rest api endpoint list
+   - [x] create the rest api endpoint get
+   - [x] create the rest api endpoint post
+   - [x] create the rest api endpoint patch
+   - [x] create the rest api endpoint delete (just because I can not needed)
+- [x] Configure webpack-dev-server
+- [x] Configure webpack build
+- [x] recreate the layout using react components
+   - [x] create header to toggle list and home navigation
+   - [x] create a basic list of the articles for indexing (just because it makes sense)
+   - [x] create a body component that renders a body component containing predefined html
+   - [x] create a meta component for meta sidebar
+   - [x] create a text header component that uses canvas for see through block
+~~- [ ] write unit tests for code where its reasonable and have time~~
+- [x] document installation
+~~- [ ] code cleanup when done and time remaining~~
 
 ~~~~
 I ran out of time before I could write tests, this will be something that I will be implementing as part of the epitome framework that I wrote. This example app will serve as a first test when I do implement that. I would have used mocha and Controllers/Article.controller.test.js would return a function that gets the app container and controller instance.
 ~~~~
 
-## Desisions and reasons for them
+## Decisions and reasons for them
 ### Structure
-rest-server: The rest-server folder is clearly named as a rest based server root directory in order to clarify the intent that in here is all the files for that project. Code can be split up to be contained is seperate git repositories in order to minimize the impact a small change has on a development team.
+rest-server: The rest-server folder is clearly named as a rest based server root directory in order to clarify the intent that in here is all the files for that project. Code can be split up to be contained is separate git repositories in order to minimize the impact a small change has on a development team.
 
-font-end: Contains all the code used by the front end application. This would be moved to a seperete github project and included as a sub project here. The front end can run its own server to do server side rendering.
+front-end: Contains all the code used by the front end application. This would be moved to a separate github project and included as a sub project here. The front end can run its own server to do server side rendering.
 
 common: Would be moved to a seperate github project and installed on both the front end and back end applications in order to share the common code of the project.
 
@@ -84,15 +89,33 @@ common: Would be moved to a seperate github project and installed on both the fr
 ~~~~
 
 ### Libraries
-epitome: A framework I am working on for running a backend on. The goal is to simplify and eliminate menial tasks that developers usually have to handle in the same way Laravel and CakePhp does in the php comunity. I used it so that you can be aware that I wrote it and this way you can see more of my code than what I can produce in 12 hours.
+epitome: A framework I am working on for running a backend on. The goal is to simplify and eliminate menial tasks that developers usually have to handle in the same way Laravel and CakePhp does in the php community. I used it so that you can be aware that I wrote it and this way you can see more of my code than what I can produce in 12 hours.
 
 uni-validation: Another lib that I wrote (granted there are better options out there, like uni-validator), and decided to use so that you can go see my code quality there as well.
 
-Rxjs: Great for all asyncronous coding. A dependency of uni-validation.
+Rxjs: Great for all asynchronous coding. A dependency of uni-validation.
+
+Styling: Done with an adaptation of my custom framework [dewwwald/Modern](https://github.com/dewwwald/Modern).
 
 ## INSTALLATION
+
+The installation assumes that mongodb is setup with no user on the development machine.
+
+Requirements:
+- Mongodb v3.6.3
+- node v8.9.4
+- npm 5.6.0
+
+This installs npm, builds the front end and starts the front end and back end server.
+```
+npm install
+npm run seeder
+npm start
+```
 
 ### Requirements
 - NodeJs v8.9.4
 - MongoDB v3.4.2
 - NPM 5.6.0
+
+

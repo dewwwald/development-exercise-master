@@ -2,3 +2,6 @@
 *.ai
 *.pdf
 node_modules
+front-end/build
+front-end/babel_cache
+babel_cache

@@ -5,7 +5,7 @@ module.exports = class ArticleController {
     get container() { return this._container; }
     get ArticleModel() { return this._ArticleModel; }
     set ArticleModel(value) { this._ArticleModel = value; }
-    
+
     constructor(container) {
         this._container = container;
         this.ArticleModel = this.container.make('Model/Article');
@@ -27,7 +27,7 @@ module.exports = class ArticleController {
         }
     }
 
-    
+
     store(request, response) {
         return this.ArticleModel
             .create(request.body)
@@ -36,7 +36,7 @@ module.exports = class ArticleController {
             })
             .catch(error => {
                 console.error(error);
-                const maskedServerError = { 
+                const maskedServerError = {
                     message: 'An issue occured when trying to handle your request'
                 };
                 response.status(500).json(maskedServerError);
@@ -50,7 +50,7 @@ module.exports = class ArticleController {
             })
             .catch((e) => {
                 console.error(e);
-                const maskedServerError = { 
+                const maskedServerError = {
                     message: 'An issue occured when trying to handle your request'
                 };
                 response.status(500).json(maskedServerError);

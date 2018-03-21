@@ -78,9 +78,11 @@ export class CanvasHeroTitle extends Component {
     if (this.props.selectedArticle.title) {
       this.createTextLines(this.props.selectedArticle.title, textWidth)
       .then(lines => {
-        if (!this.state.textHeight) {
+        const textHeight = lines.length * this.lineHeight + 25 * this.ratio;
+        console.log(textHeight, this.state.textHeight);
+        if (textHeight !== this.state.textHeight) {
           this.setState({
-            textHeight: lines.length * this.lineHeight + 25 * this.ratio,
+            textHeight: textHeight,
             leftOffset: leftOffset - 20 * this.ratio
           });
         }

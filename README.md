@@ -89,9 +89,9 @@ common: Would be moved to a seperate github project and installed on both the fr
 ~~~~
 
 ### Libraries
-epitome: A framework I am working on for running a backend on. The goal is to simplify and eliminate menial tasks that developers usually have to handle in the same way Laravel and CakePhp does in the php community. I used it so that you can be aware that I wrote it and this way you can see more of my code than what I can produce in 12 hours. [dewwwald/epitome](https://github.com/dewwwald/epitome).
+epitome: A framework I am working on for running a backend on. The goal is to simplify and eliminate menial tasks that developers usually have to handle in the same way Laravel and CakePhp does in the php community. I used it so that you can be aware that I wrote it and this way you can see more of my code than what I can produce in 12 hours. [dewwwald/epitome](https://github.com/dewwwald/epitome)
 
-uni-validation: Another lib that I wrote (granted there are better options out there, like uni-validator), and decided to use so that you can go see my code quality there as well.
+uni-validation: Another lib that I wrote (granted there are better options out there, like uni-validator), and decided to use so that you can go see my code quality there as well. [dewwwald/uni-validation](https://github.com/dewwwald/uni-validation)
 
 Rxjs: Great for all asynchronous coding. A dependency of uni-validation.
 

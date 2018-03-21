@@ -68,9 +68,9 @@ As a whole, this exercise aims to touch on a variety of skills and concepts invo
    - [x] create a body component that renders a body component containing predefined html
    - [x] create a meta component for meta sidebar
    - [x] create a text header component that uses canvas for see through block
-~~- [ ] write unit tests for code where its reasonable and have time~~
+- [ ] ~~write unit tests for code where its reasonable and have time~~
 - [x] document installation
-~~- [ ] code cleanup when done and time remaining~~
+- [ ] ~~code cleanup when done and time remaining~~
 
 ~~~~
 I ran out of time before I could write tests, this will be something that I will be implementing as part of the epitome framework that I wrote. This example app will serve as a first test when I do implement that. I would have used mocha and Controllers/Article.controller.test.js would return a function that gets the app container and controller instance.

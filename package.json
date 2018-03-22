@@ -9,7 +9,7 @@
     "build": "webpack --config=\"front-end/webpack/config.prod.js\"",
     "server": "node fullstack.js",
     "seeder": "node seed.js",
-    "start": "npm run build && npm run server"
+    "start": "rm -rf ./font-end/build && npm run build && npm run server"
   },
   "author": "Dewald Laubscher <laubscher.dewald@gmail.com>",
   "license": "ISC",

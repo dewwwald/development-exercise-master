@@ -21,24 +21,24 @@ export class EditArticleTitle extends Component {
         let validationResults = [];
 
         this.validator.validate(data)
-            .pipe(takeUntil(destroyer$))
-            .subscribe(validationResult => {
-                validationResults = [ ...validationResults, validationResult];
-                if (validationResults.length >= length) {
-                    destroyer$.next();
-                }
-            }, reject, () => {
-                const allValid = validationResults
-                    .reduce((x, validationResult) => x && validationResult.isValid, true);
-                if (allValid) {
-                    resolve(validationResults);
-                } else {
-                    const message = validationResults
-                        .reduce((x, validationResult) => x.concat(validationResult.errors), [])
-                        .join(' ');
-                    reject(new Error(message));
-                }
-            });
+          .pipe(takeUntil(destroyer$))
+          .subscribe(validationResult => {
+              validationResults = [ ...validationResults, validationResult];
+              if (validationResults.length >= length) {
+                  destroyer$.next();
+              }
+          }, reject, () => {
+              const allValid = validationResults
+                  .reduce((x, validationResult) => x && validationResult.isValid, true);
+              if (allValid) {
+                  resolve(validationResults);
+              } else {
+                  const message = validationResults
+                      .reduce((x, validationResult) => x.concat(validationResult.errors), [])
+                      .join(' ');
+                  reject(new Error(message));
+              }
+          });
     })
   }
 
@@ -82,39 +82,39 @@ export class EditArticleTitle extends Component {
     console.log(this.state.articleTitle);
     return (<div className="enclosure" style={{ ...this.props.style }}>
       <div className="g">
-        <div
-          style={styles.inputWrap}
-          className="g__i w--5/8 desk-push--1/8">
-          <div style={styles.actionsWrapper}>
-            <button
-              onClick={this.onCancel.bind(this)}
-              className="btn btn--error"
-              style={styles.button}>
-              <svg className="symbol" viewBox="0 0 25.242 20">
-                <use xlinkHref="#icon-x"/>
-              </svg>
-            </button>
-            <button
-              onClick={this.onSave.bind(this)}
-              className="btn btn--success"
-              disabled={this.state.error}
-              style={styles.button}>
-              <svg className="symbol" viewBox="0 0 25.242 20">
-                <use xlinkHref="#icon-checkmark"/>
-              </svg>
-            </button>
-          </div>
-          <input
-            ref={input => this.inputField = input}
-            className="fs--h3"
-            style={styles.inputField}
-            value={this.state.articleTitle}
-            onChange={this.textChangeHandle.bind(this)} />
-          <div>
-            <span className="fc--base">slug:</span> {this.state.articleTitle
-              ? Slugifier.slugify(this.state.articleTitle)
-              : (<span className="fc--base">please enter a title</span>)
-            }
+        <div className="g__i w--5/8 desk-push--1/8">
+          <div style={styles.inputWrap}>
+            <div style={styles.actionsWrapper}>
+              <button
+                onClick={this.onCancel.bind(this)}
+                className="btn btn--error"
+                style={styles.button}>
+                <svg className="symbol" viewBox="0 0 25.242 20">
+                  <use xlinkHref="#icon-x"/>
+                </svg>
+              </button>
+              <button
+                onClick={this.onSave.bind(this)}
+                className="btn btn--success"
+                disabled={this.state.error}
+                style={styles.button}>
+                <svg className="symbol" viewBox="0 0 25.242 20">
+                  <use xlinkHref="#icon-checkmark"/>
+                </svg>
+              </button>
+            </div>
+            <input
+              ref={input => this.inputField = input}
+              className="fs--h3"
+              style={styles.inputField}
+              value={this.state.articleTitle}
+              onChange={this.textChangeHandle.bind(this)} />
+            <div>
+              <span className="fc--base">slug:</span> {this.state.articleTitle
+                ? Slugifier.slugify(this.state.articleTitle)
+                : (<span className="fc--base">please enter a title</span>)
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -128,6 +128,7 @@ const styles = {
     paddingTop: '25px',
     paddingBottom: '25px',
     paddingRight: '25px',
+    paddingLeft: '25px',
     backgroundColor: 'white',
     position: 'relative',
   },
